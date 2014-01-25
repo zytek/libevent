@@ -611,6 +611,12 @@ struct evhttp_connection *evhttp_request_get_connection(struct evhttp_request *r
  */
 struct event_base *evhttp_connection_get_base(struct evhttp_connection *req);
 
+/**
+ * Returns length of connection's output buffer
+ */
+size_t evhttp_connection_get_output_buffer_length(struct evhttp_connection *req);
+
+
 void evhttp_connection_set_max_headers_size(struct evhttp_connection *evcon,
     ev_ssize_t new_max_headers_size);
 

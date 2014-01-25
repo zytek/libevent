@@ -3823,6 +3823,12 @@ evhttp_connection_get_base(struct evhttp_connection *conn)
 	return conn->base;
 }
 
+size_t
+evhttp_connection_get_output_buffer_length(struct evhttp_connection *conn)
+{
+               return evbuffer_get_length(bufferevent_get_output(conn->bufev));
+}
+
 void
 evhttp_request_set_chunked_cb(struct evhttp_request *req,
     void (*cb)(struct evhttp_request *, void *))
